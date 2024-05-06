@@ -1,11 +1,7 @@
 
 export default class Car {
-    constructor (data) {
-        Object.entries(data).forEach(entries => {
-            const [key, value] = entries
-
-            this[key] = value
-        })
+    constructor (formData) {
+        formData.forEach((value, key) => this[key] = value)
     }
 
     setData (newData) {
