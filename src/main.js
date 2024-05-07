@@ -1,44 +1,50 @@
 
-import Car from "./modules/car.js";
+import Car, { carList } from "./modules/car.js";
+import {} from "./modules/combo.js";
 import { validatePlate, validateYear } from "./modules/validations.js";
 
 const form = document.getElementById('formElem')
+const tableBody = document.querySelector('tbody')
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-
     
     const formData = new FormData(form)
-    
-    const car = new Car(formData)
-    console.log(car)
-    
-    console.log(validatePlate(car.plate))
 
-    console.log(validateYear(car.year))
-    
+    const formObj = {}
+    formData.forEach((value, key) => formObj[key] = value)
+
+    const car = new Car(formObj)
+
+
+
+    carList.push(car)
+    createTable()
+
+    const avatar = document.querySelector('img')
+
+    console.log(e.files)
+
+    // const blob = new Blob([e.files[0]], { type: "image/jpeg" })
+    const blobURL = URL.createObjectURL(car.img)
+    avatar.style.display = "block"
+    avatar.src = blobURL
+
 })
 
-const brandCombo = document.getElementById('brand')
-const modelCombo = document.getElementById('model')
 
-const onSelectChange = () => {
 
-    const models = {
-        'Toyota': ['Corsa', 'Fortruner', 'Yaris'],
-        'Ford': ['Fiesta', 'Ranger', 'Explorer' ],
-        'Chevrolet': ['Optra', 'Cruze', 'Silverado']
-    }
 
-    modelCombo.replaceChildren()
-    
-    models[brandCombo.value].forEach(value => {
-        const option = modelCombo.appendChild(document.createElement('option'))
-        option.value = value
-        option.innerText = value
+const createTable = () => {
+    tableBody.replaceChildren()
+
+    carList.forEach(car => {
+        const row = tableBody.appendChild(document.createElement('tr'))
+        car.setTableRow(row)
+
+        row.onclick = () => car.updateInfo()
     })
 }
 
-onSelectChange()
-brandCombo.onchange = onSelectChange
-
+createTable()

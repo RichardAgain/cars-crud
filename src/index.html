@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="./output.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="flex flex-row p-8 justify-center">
+
+        <table id="tableElem" class="border-black border-2 mr-4 p-4">
+        <thead>
+            <tr>
+                <th> brand </th>
+                <th> model </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+        </table>
+        
+        <form id="formElem" class="flex flex-col">
+            <select name="brand" id="brand" class="border-black border-2 rounded ">
+                <option value="Toyota" selected> Toyota </option>
+                <option value="Ford"> Ford </option>
+                <option value="Chevrolet"> Chevrolet </option>
+            </select>
+            <select name="model" id="model" class="border-black border-2 rounded ">
+                
+            </select>
+            <input type="" name="plate" class="border-black border-2 rounded ">
+            <input type="number" name="year" alt="" class="border-black border-2 rounded "> 
+            <input type="color" name="color" class="border-black border-2 rounded ">
+            <input type="file" id="img" name="img" accept="image/*">
+            <input type="submit">
+        </form>
+
+        <img src="" alt="" class="w-400 h-400">
+    
+    </div>
+    
+    <script src="./main.js" type="module"> </script>
+</body>
+</html>
