@@ -27,10 +27,10 @@ export default class Car {
         })
     }
 
-    setTableRow (tr) {
-        tr.insertCell().textContent = this.model
-        tr.insertCell().textContent = this.brand
-        tr.insertCell().textContent = this.color
+    createRow (row) {
+        row.appendChild(document.createTextNode(this.model))
+        row.appendChild(document.createTextNode(this.name))
+        row.appendChild(document.createTextNode(this.plate))
 
     }
 

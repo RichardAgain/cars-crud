@@ -4,10 +4,11 @@ import { onSelectChange } from "./modules/combo.js";
 import runValidations from "./modules/validations.js";
 
 const form = document.getElementById('formElem')
-const tableBody = document.querySelector('tbody')
+const toShow = document.getElementById('carList')
+
+const submitButton = document.getElementById('submitButton')
 const createButton = document.getElementById('create')
 const deleteButton = document.getElementById('byebye')
-
 
 let editing;
 let selectedCarIndex;
@@ -26,20 +27,23 @@ form.addEventListener('submit', (e) => {
 
     ) : (alert('failed validations'))
 
-
-
     createTable()
 })
 
 createButton.onclick = () => {
-    editing = false
+    toggleEditing(false)
     clear()
 }
 
-const deletion = index => {
+deleteButton.onclick = () => {
 
-    carList.splice(index, 1)
+    const car = carList[selectedCarIndex]
+    console.log(car)
+        
+    confirm(`Seguro quieres eliminar el ${car.model} (${car.plate}) de ${car.name}?`) && carList.splice(selectedCarIndex, 1)
+
     createTable()
+
 }
 
 const clear = () => {
@@ -58,18 +62,36 @@ const clear = () => {
     document.getElementById('carImage').src = ''
 }
 
+const toggleEditing = value => {
+    editing = value
+    submitButton.value = value ? 'Modificar' : 'Crear'
+}
+
 
 const createTable = () => {
-    tableBody.replaceChildren()
+    toShow.replaceChildren()
 
     carList.forEach((car, index) => {
-        const row = tableBody.appendChild(document.createElement('tr'))
-        car.setTableRow(row)
 
-        row.onclick = () => { car.updateInfo(), onSelectChange(), selectedCarIndex = index, editing = true }
+        const row = toShow.appendChild(document.createElement('div'))
+        car.createRow(row)
 
-        deleteButton.onclick = () => deletion(index)
+        
+        row.classList.add('bg-green-400')
+        row.classList.add('hover:bg-gray-400')
+
+
+        console.log('how')
+
+        row.onclick = () => { 
+            car.updateInfo()
+            onSelectChange()
+            toggleEditing(true) 
+            selectedCarIndex = index 
+        }
+
     })
 }
 
 createTable()
+ 

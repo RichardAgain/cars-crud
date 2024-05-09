@@ -11,72 +11,70 @@
 
     <div class="flex flex-row p-8 justify-center">
 
-        <table id="tableElem" class="border-black border-2 mr-4 p-4">
-        <thead>
-            <tr>
-                <th> brand </th>
-                <th> model </th>
-            </tr>
-        </thead>
-        <tbody>
+        <div id="carList" class="">
             
-        </tbody>
-        </table>
+        </div>
         
 
-        <div>
-            <img id="carImage" src="" alt="" width="100" height="100"> 
+        <div class="bg-gray-400 p-5">
 
-        <form id="formElem" class="flex flex-col">
+            <div class="flex">
 
-            <label for="brand"> Marca </label>
-            <select name="brand" id="brand" class="border-black border-2 rounded ">
-                <option value="Toyota" selected> Toyota </option>
-                <option value="Ford"> Ford </option>
-                <option value="Chevrolet"> Chevrolet </option>
-            </select>
-            
-            <label for="model"> Modelo </label>
-            <select name="model" id="model" class="border-black border-2 rounded ">
                 
-            </select>
-            
-            <label for="plate"> Matricula </label>
-            <input name="plate" id="plate" class="border-black border-2 rounded ">
-
-            <label for="year"> Año </label>
-            <input type="number" name="year" id="year" alt="" class="border-black border-2 rounded "> 
-
-            <label for="color"> Color </label>
-            <input type="color" name="color" id="color" class="border-black border-2 rounded ">
-            
-            <div class="flex flex-col">
-
-                <h1 class="text-center"> Datos del dueño </h1>
+                <form id="formElem" class="flex flex-col">
+                    <img id="carImage" src="" alt="" width="100" height="100"> 
+                    
+                    <label for="brand"> Marca </label>
+                    <select name="brand" id="brand" class="border-black border-2 rounded ">
+                        <option value="Toyota" selected> Toyota </option>
+                        <option value="Ford"> Ford </option>
+                        <option value="Chevrolet"> Chevrolet </option>
+                    </select>
+                    
+                    <label for="model"> Modelo </label>
+                    <select name="model" id="model" class="border-black border-2 rounded ">
+                        
+                    </select>
+                    
+                    <label for="plate"> Matricula </label>
+                    <input name="plate" id="plate" class="border-black border-2 rounded ">
+                    
+                    <label for="year"> Año </label>
+                    <input type="number" name="year" id="year" alt="" class="border-black border-2 rounded "> 
                 
-                <label for="name"> Nombre </label>
-                <input type="" name="name" id="name" class="border-black border-2 rounded ">
-
-                <label for="second"> Apellido </label>
-                <input type="" name="second" id="second" class="border-black border-2 rounded ">
-
-                <label for="ci"> Cedula </label>
-                <input type="" name="ci" id="ci" class="border-black border-2 rounded ">
-
-                <label for="phone"> Telefono </label>
-                <input type="" name="phone" id="phone" class="border-black border-2 rounded ">
-
-                <label for="address"> Direccion</label>
-                <input type="" name="address" id="address" class="border-black border-2 rounded ">
-                
+                    <label for="color"> Color </label>
+                    <input type="color" name="color" id="color" class="border-black border-2 rounded ">
+                    
+                    <div class="flex flex-col">
+                        
+                        <h1 class="text-center"> Datos del dueño </h1>
+                        
+                        <label for="name"> Nombre </label>
+                        <input type="" name="name" id="name" class="border-black border-2 rounded ">
+                        
+                        <label for="second"> Apellido </label>
+                        <input type="" name="second" id="second" class="border-black border-2 rounded ">
+                        
+                        <label for="ci"> Cedula </label>
+                        <input type="" name="ci" id="ci" class="border-black border-2 rounded ">
+                        
+                        <label for="phone"> Telefono </label>
+                        <input type="" name="phone" id="phone" class="border-black border-2 rounded ">
+                    
+                        <label for="address"> Direccion</label>
+                        <input type="" name="address" id="address" class="border-black border-2 rounded ">
+                        
+                    </div>
+                    
+                    <input type="file" id="img" name="img" accept="image/*">
+                    <input type="submit" value="Crear" id="submitButton" class="cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold
+                    hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                </form>
+                <div class="flex flex-col">
+                    <button id="byebye" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"> BYE BYE </button>
+                    <button id="create" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"> CREATE </button>
+                </div>
             </div>
-            
-            <input type="file" id="img" name="img" accept="image/*">
-            <input type="submit">
-        </form>
-        
-        <button id="byebye" class="border-black border-1" > BYE BYE </button>
-        <button id="create"> CREATE </button>
         </div>
 
     </div>
