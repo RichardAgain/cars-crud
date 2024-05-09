@@ -23,4 +23,4 @@ const onSelectChange = () => {
 onSelectChange()
 brandCombo.onchange = onSelectChange
 
-export default true
+export { onSelectChange }

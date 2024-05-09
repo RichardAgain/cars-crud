@@ -1,11 +1,14 @@
 
 import Car, { carList } from "./modules/car.js";
-import {} from "./modules/combo.js";
-import { validatePlate, validateYear } from "./modules/validations.js";
+import { onSelectChange } from "./modules/combo.js";
+import runValidations from "./modules/validations.js";
 
 const form = document.getElementById('formElem')
 const tableBody = document.querySelector('tbody')
+const deleteButton = document.getElementById('byebye')
 
+let editing;
+let selectedCarIndex;
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -14,36 +17,32 @@ form.addEventListener('submit', (e) => {
 
     const formObj = {}
     formData.forEach((value, key) => formObj[key] = value)
+    formObj.img = URL.createObjectURL(formObj.img)
 
-    const car = new Car(formObj)
+    runValidations(formObj) ? console.log('all test passed') : alert('nai')
 
+    editing ? carList[selectedCarIndex].setData(formObj) : carList.push(new Car (formObj))
 
-
-    carList.push(car)
     createTable()
-
-    const avatar = document.querySelector('img')
-
-    console.log(e.files)
-
-    // const blob = new Blob([e.files[0]], { type: "image/jpeg" })
-    const blobURL = URL.createObjectURL(car.img)
-    avatar.style.display = "block"
-    avatar.src = blobURL
-
 })
 
+const deletion = index => {
 
+    carList.splice(index, 1)
+    createTable()
+}
 
 
 const createTable = () => {
     tableBody.replaceChildren()
 
-    carList.forEach(car => {
+    carList.forEach((car, index) => {
         const row = tableBody.appendChild(document.createElement('tr'))
         car.setTableRow(row)
 
-        row.onclick = () => car.updateInfo()
+        row.onclick = () => { car.updateInfo(), onSelectChange(), selectedCarIndex = index, editing = true }
+
+        deleteButton.onclick = () => deletion(index)
     })
 }
 
