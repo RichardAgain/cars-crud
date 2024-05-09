@@ -28,9 +28,15 @@ export default class Car {
     }
 
     createRow (row) {
-        row.appendChild(document.createTextNode(this.model))
-        row.appendChild(document.createTextNode(this.name))
-        row.appendChild(document.createTextNode(this.plate))
+        row.appendChild(document.createElement('p')).innerText = this.model
+        row.appendChild(document.createElement('p')).innerText = this.plate
+        row.appendChild(document.createElement('p')).innerText = this.name
+        row.appendChild(document.createElement('p')).innerText = this.second
+        
+        const color = row.appendChild(document.createElement('div'))
+        color.classList.add('size-6')
+
+        color.style.backgroundColor = this.color
 
     }
 
@@ -45,10 +51,10 @@ export default class Car {
         document.getElementById('name').value = this.name
         document.getElementById('second').value = this.second
         document.getElementById('phone').value = this.phone
-        document.getElementById('address').value = this.addres
+        document.getElementById('address').value = this.address
         document.getElementById('ci').value = this.ci
 
-        document.getElementById('carImage').src = this.img
+        document.getElementById('carImage').src = (this.img === '') ? '../assets/image.svg' : this.img
     }
 
 }   
@@ -64,7 +70,8 @@ export const carList = [
         second: 'Hern',
         phone: '0414-4248756',
         ci: '30556338',
-        addres: 'albuquerque',
+        address: 'albuquerque',
+        img: '../assets/rayo.webp'
     }),
     new Car ({
         brand: 'Chevrolet',
@@ -76,18 +83,7 @@ export const carList = [
         second: 'Hern',
         phone: '0414-4248756',
         ci: '30556338',
-        addres: 'albuquerque',
-    }),
-    new Car ({
-        brand: 'Chevrolet',
-        model: 'Optra',
-        plate: 'AGC75T',
-        year: 2008,
-        color: '#e8a873',
-        name: 'Richardo',
-        second: 'Hern',
-        phone: '0414-4248756',
-        ci: '30556338',
-        addres: 'albuquerque',
+        address: 'albuquerque',
+        img: '../assets/jesus.png'
     })
 ]
