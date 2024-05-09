@@ -38,6 +38,7 @@ export default class Car {
 
         document.getElementById('brand').value = this.brand
         document.getElementById('plate').value = this.plate
+
         document.getElementById('year').value = this.year
         document.getElementById('color').value = this.color
 
@@ -59,6 +60,18 @@ export const carList = [
         plate: '123ASD',
         year: 2009,
         color: '#c7c7c7',
+        name: 'Richardo',
+        second: 'Hern',
+        phone: '0414-4248756',
+        ci: '30556338',
+        addres: 'albuquerque',
+    }),
+    new Car ({
+        brand: 'Chevrolet',
+        model: 'Optra',
+        plate: 'AGC75T',
+        year: 2008,
+        color: '#e8a873',
         name: 'Richardo',
         second: 'Hern',
         phone: '0414-4248756',
