@@ -1,13 +1,18 @@
 
 const validatePlate = plate => {
-    const test = /[A-Z0-9]{6}/.test(plate) && plate.length === 6
+    const test = /^[A-Z0-9]{6}$/.test(plate) && plate.length === 6
     test || alert('La placa no esta en el formato correcto')
     
     return test
 }
 
 const validateYear = year => {
-    return 1900 <= year <= new Date().getFullYear()
+    const test = year <= new Date().getFullYear() && year >= 1900
+    console.log(test)
+    test || alert(`La año no esta en el rango correcto (1900 - ${new Date().getFullYear()})`)
+    
+    return test
+
 }
 
 const validateCI = ci => {

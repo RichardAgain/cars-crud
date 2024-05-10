@@ -43,6 +43,8 @@ export default class Car {
     updateInfo () {
 
         document.getElementById('brand').value = this.brand
+        document.getElementById('model').value = this.model
+
         document.getElementById('plate').value = this.plate
 
         document.getElementById('year').value = this.year
@@ -55,35 +57,62 @@ export default class Car {
         document.getElementById('ci').value = this.ci
 
         document.getElementById('carImage').src = (this.img === '') ? '../assets/image.svg' : this.img
+        // color.className = 'border-1 border-black'
     }
 
 }   
 
 export const carList = [
     new Car ({
-        brand: 'Toyota',
-        model: 'Corsa',
-        plate: '123ASD',
-        year: 2009,
-        color: '#c7c7c7',
-        name: 'Richardo',
-        second: 'Hern',
-        phone: '0414-4248756',
-        ci: '30556338',
-        address: 'albuquerque',
+        brand: 'Chevrolet',
+        model: 'Bud Light',
+        plate: 'NUM95R',
+        year: 2004,
+        color: '#f02424',
+        name: 'Rayo',
+        second: 'McQueen',
+        phone: '0414-3127495',
+        ci: '95959595',
+        address: 'California',
         img: '../assets/rayo.webp'
     }),
     new Car ({
-        brand: 'Chevrolet',
-        model: 'Optra',
+        brand: 'Chrysler',
+        model: 'Plymouth Superbird',
         plate: 'AGC75T',
-        year: 2008,
-        color: '#e8a873',
-        name: 'Richardo',
-        second: 'Hern',
+        year: 1970,
+        color: '#339ee1',
+        name: 'Strip',
+        second: 'Weathers',
+        phone: '0414-4249066',
+        ci: '9425245',
+        address: 'Texas',
+        img: '../assets/rey.png'
+    }),
+    new Car ({
+        brand: 'Dodge',
+        model: 'Charger',
+        plate: 'HJFK24',
+        year: 1969,
+        color: '#f58a32',
+        name: 'Snot',
+        second: 'Rod',
+        phone: '0414-4300312',
+        ci: '12029954',
+        address: 'Detroit',
+        img: '../assets/snot_rod.png'
+    }),
+    new Car ({
+        brand: 'Chevrolet',
+        model: 'Task Force',
+        plate: 'GAY7T6',
+        year: 1956,
+        color: '#683a22',
+        name: 'Tom',
+        second: 'Mater',
         phone: '0414-4248756',
         ci: '30556338',
-        address: 'albuquerque',
-        img: '../assets/jesus.png'
+        address: 'Radiator Springs',
+        img: '../assets/mater.png'
     })
 ]

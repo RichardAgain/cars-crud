@@ -35,14 +35,12 @@ const peformAction = formObj => {
     
     car.updateInfo()
     onSelectChange()
-    toggleEditing(true) 
+    toggleEditing(true)
 
     createTable()
 }
 
-// fileChooser.onchange = () => {
-//     document.getElementById('carImage').src = fileChooser.value
-// }
+
 
 createButton.onclick = () => {
     toggleEditing(false)
@@ -58,22 +56,19 @@ deleteButton.onclick = () => {
 
     createTable()
     
-    carList.length === 0 ? clear() : carList[carList.length - 1].updateInfo()
+    carList.length === 0 ? clear() : carList[carList.length - 1].updateInfo(), selectedCarIndex = carList.length - 1
 }
 
 const clear = () => {
-
     document.getElementById('brand').value = 'Toyota'
     document.getElementById('plate').value = ''
     document.getElementById('year').value = ''
     document.getElementById('color').value = ''
-
     document.getElementById('name').value = ''
     document.getElementById('second').value = ''
     document.getElementById('phone').value = ''
     document.getElementById('address').value =''
     document.getElementById('ci').value = ''
-
     document.getElementById('carImage').src = '../assets/image.svg'
 }
 
@@ -97,33 +92,23 @@ const createTable = () => {
 
         const row = toShow.appendChild(document.createElement('div'))
         car.createRow(row)
-
-
         
         row.classList.add(`bg-gray-200`)
         row.classList.add('hover:bg-gray-300')
-
         row.classList.add('inline-block')
         row.classList.add('text-lg')
-
         row.classList.add('h-10')
         row.classList.add('mt-2')
         row.classList.add('h-12')
-
         row.classList.add('flex')
         row.classList.add('flex-row')
         row.classList.add('justify-around')
         row.classList.add('items-center')
-
-
         row.classList.add('border-black')
         row.classList.add('border-solid')
         row.classList.add('rounded')
         row.classList.add('border-4')
-
         row.classList.add('cursor-pointer')
-
-
 
         row.onclick = () => { 
             car.updateInfo()

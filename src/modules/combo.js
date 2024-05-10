@@ -7,7 +7,9 @@ const onSelectChange = () => {
     const models = {
         'Toyota': ['Corsa', 'Fortruner', 'Yaris'],
         'Ford': ['Fiesta', 'Ranger', 'Explorer' ],
-        'Chevrolet': ['Optra', 'Cruze', 'Silverado']
+        'Chevrolet': ['Optra', 'Cruze', 'Bud Light', 'Task Force'],
+        'Chrysler': ['Plymouth Superbird', '200C', 'Sunbeam'],
+        'Dodge': ['Charger', 'Challenger', 'Durango']
     }
 
     modelCombo.replaceChildren()
@@ -18,7 +20,6 @@ const onSelectChange = () => {
         option.innerText = value
     })
 }
-
 
 onSelectChange()
 brandCombo.onchange = onSelectChange

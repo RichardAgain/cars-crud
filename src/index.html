@@ -7,7 +7,7 @@
 
     <link href="./output.css" rel="stylesheet"/>
 </head>
-<body class="bg-[url('../assets/radiator.webp')] bg-cover">
+<body class="bg-[url('../assets/BGPRO.png')] bg-cover">
 
     <div class="flex flex-row p-8 justify-center bg-gray-800/50">
 
@@ -20,13 +20,12 @@
                 <p>COLOR</p>
             </div>
 
-            
-
             <div id="carList">
 
             </div>
         </div>
-        
+
+        <audio src="../assets/Life is a Highway Audio.mp3" autoplay loop></audio>
 
         <div class="bg-gray-800/50 p-5 rounded text-white ">
 
@@ -41,6 +40,8 @@
                         <option value="Toyota" selected> Toyota </option>
                         <option value="Ford"> Ford </option>
                         <option value="Chevrolet"> Chevrolet </option>
+                        <option value="Chrysler"> Chrysler </option>
+                        <option value="Dodge"> Dodge </option>
                     </select>
                     
                     <label for="model"> Modelo </label>
@@ -59,13 +60,13 @@
                     
                     <div class="flex flex-col">
                         
-                        <h1 class="text-center"> Datos del dueño </h1>
+                        <h1 class="text-center text-xl font-semibold"> Datos del dueño </h1>
                         
                         <label for="name"> Nombre </label>
-                        <input class="text-black" type="" name="name" id="name" class="border-black border-2 rounded ">
+                        <input class="text-black" placeholder="Jesus" type="" name="name" id="name" class="border-black border-2 rounded ">
                         
                         <label for="second"> Apellido </label>
-                        <input class="text-black" type="" name="second" id="second" class="border-black border-2 rounded ">
+                        <input class="text-black" placeholder="Castillo" type="" name="second" id="second" class="border-black border-2 rounded ">
                         
                         <label for="ci"> Cedula </label>
                         <input class="text-black" placeholder="12345678" type="" name="ci" id="ci" class="border-black border-2 rounded ">
@@ -74,7 +75,7 @@
                         <input class="text-black" placeholder="0414-1234567" type="" name="phone" id="phone" class="border-black border-2 rounded ">
                     
                         <label for="address"> Direccion</label>
-                        <input class="text-black" type="" name="address" id="address" class="border-black border-2 rounded ">
+                        <input class="text-black" placeholder="Carabobo, Venezuela" type="" name="address" id="address" class="border-black border-2 rounded ">
                         
                     </div>
                     
@@ -98,10 +99,43 @@
         
     </div>
     
-    <div>
-        <img src="" alt="">
-        <p>CRUD</p>
-    </div>
+    <footer>
+        <div class="bg-[#8f2829] p-10 border-5 border-yellow-200"> 
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+                    <div class="mb-5">
+                        <h4 class="text-2xl pb-4">Cars</h4>
+                        <p class="text-white">
+                            <br>Radiator Spring<br>
+                            <strong>Tel:</strong> +58 412-6563524 <br>
+                            <strong>Correo:</strong> lightingMcqueen@Rust-Eze.com <br>
+                        </p>
+                    </div>
+                    <div class="mb-5">
+                        <h4>Lighting Mcqueen Links</h4>
+                        <ul class="text-white">
+                            <li class="pb-4">Lighting Mcqueen Contact</li>
+                            <li class="pb-4">Mcqueen Services</li>
+                            <li class="pb-4">Rust-Eze</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <h4>Our Links</h4>
+                        <ul class="text-white">
+                            <li class="pb-4">Web Contact</li>
+                            <li class="pb-4">Cars List</li>
+                            <li class="pb-4">Services</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <h4>Join Our Team</h4>
+                        <img src="../assets/Pixar-Cars-Rusteze-logo-vector.webp" alt="">
+                    </div>
+                </div>
+            </div>
+       
+        </div>
+    </footer>
     
     <script src="./main.js" type="module"> </script>
 </body>
